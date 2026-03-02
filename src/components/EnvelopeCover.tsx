@@ -4,10 +4,12 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 import { FloatingHearts } from "@/components/FloatingHearts";
-import Image from "next/image";
-import type { Letter } from "@/data/letters";
 
-export function EnvelopeCover({ onOpen }: { onOpen: () => void }) {
+interface EnvelopeCoverProps {
+  onOpen: () => void;
+}
+
+export function EnvelopeCover({ onOpen } : EnvelopeCoverProps) {
   const [phase, setPhase] = useState<"idle" | "opening">("idle");
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -104,12 +106,12 @@ export function EnvelopeCover({ onOpen }: { onOpen: () => void }) {
                       delay: phase === "opening" ? 0.4 : 0,
                     }}
                   >
-                    <Image
-                      src={sealPhoto}
+                    {/* <Image
+                      src={letter.photo}
                       alt="Our photo"
                       fill
                       className="object-cover"
-                    />
+                    /> */}
                   </motion.div>
                 </motion.div>
               </motion.div>

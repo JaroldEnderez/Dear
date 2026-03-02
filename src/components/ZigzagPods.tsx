@@ -11,6 +11,7 @@ export function ZigzagPods() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const selectedLetter = letters[selectedIndex];
 
+
   return (
     <motion.main
       className="relative min-h-screen bg-blush/30 overflow-x-hidden flex flex-col md:flex-row pl-2 pr-2 sm:pl-4"
@@ -45,7 +46,6 @@ export function ZigzagPods() {
           transition={{ duration: 0.25 }}
         >
           {selectedLetter && <Envelope letter={selectedLetter} />}
-          <p className="mt-6 text-ink/70 text-sm font-medium">{selectedLetter?.title}</p>
         </motion.div>
       </div>
     </motion.main>
